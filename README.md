@@ -5,5 +5,4 @@ Non utilizzare assolutamente questi strumenti per scopi illegali, rischi la gale
 
 [REQUISITI]
 1) python installato
-2) libreria subprocess installata, per installarla fare: pip install subprocess
-3) tool installati = nmap, gobuster, ffuf, curl e smbclient
+2) tool installati = nmap, gobuster, ffuf, curl e smbclient
