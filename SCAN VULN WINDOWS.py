@@ -5,7 +5,7 @@ import time
 import subprocess
 
 class ScanVuln():
-  
+    
     def nmap():
         print("[BENVENUTO NEL TUO ENUMERATORE DI VULN PERSONALE PER WINDOWS CON QUALCHE MODIFICA RISPETTO A LINIX]")
         time.sleep(2)
@@ -103,7 +103,7 @@ class ScanVuln():
         time.sleep(0.5)
         print("[TENTO SMB ANONIMO...]")
         try:
-            subprocess.run(["smbclient", "-L", f"//{risposta}", "-D", "/projects"], check=True)
+            subprocess.run(["smbclient", "-L", f"//{risposta}", "-N"], check=True)
             print("[TENTATIVO DI CONNESSIONE ANONIMA RIUSCITO]")
         except subprocess.CalledProcessError:
             print("[TENTATIVO DI CONNESSIONE ANONIMA FALLITO]")
@@ -135,7 +135,7 @@ class ScanVuln():
                 print("[TENTATIVO DI CONNESSIONE ANONIMA FALLITO]")
         elif servizio.lower() == "evil-winrm":
             try:
-                subprocess.run([f"evil-winrm -i 10.129.36.210 -u 'anonymous' -p '' -c 'ls' >> analisi_macchina.txt"], shell=True, check=True)
+                subprocess.run([f"evil-winrm -i {ip} -u 'anonymous' -p '' -c 'ls' >> analisi_macchina.txt"], shell=True, check=True)
                 print("[TENTATIVO DI CONNESSIONE ANONIMA  SU EVIL-WINRM RIUSCITO CONTROLLA analisi_macchina.txt]")
             except subprocess.CalledProcessError:
                 print("[TENTATIVO DI CONNESSIONE ANONIMA SU EVIL-WINRM FALLITO]")
@@ -189,4 +189,5 @@ class ScanVuln():
             print("[IL CONTROLLO PER QUESTO SERVIZIO NON E PRESENTE PROVA CON UNALTRO SERVIZIO]")
     persistere()
 ScanVuln()
+
 
