@@ -5,7 +5,7 @@ Non utilizzare assolutamente questi strumenti per scopi illegali, rischi la gale
 
 [REQUISITI]
 1) python installato ovviemente
-2) tool installati = nmap, gobuster, ffuf, nxc, feroxbuster, BloodyAD, ldapsearch, Certipy, impacket-getTGT.py, bloodyhound
+2) tool installati = nmap, gobuster, ffuf, nxc, feroxbuster, BloodyAD, ldapsearch, Certipy, impacket-getTGT.py, bloodyhound, smbclient
 3) word list = le scegli te a piacimento inserisci il percorso corretto e va
 ---------------------------------------------------------------------------------------------------------------------------
 [DISCLAMER]
@@ -15,6 +15,6 @@ Absolutely do not use these tools for illegal purposes, you risk jail time, use 
 
 [REQUIREMENTS]
 1) python installed obviously
-2) installed tools = nmap, gobuster, ffuf, nxc, feroxbuster, BloodyAD, ldapsearch, Certipy, impacket-getTGT.py, bloodyhound
+2) installed tools = nmap, gobuster, ffuf, nxc, feroxbuster, BloodyAD, ldapsearch, Certipy, impacket-getTGT.py, bloodyhound, smbclient
 3) word list = you choose them as you like, enter the correct path and go
 ---------------------------------------------------------------------------------------------------------------------------
