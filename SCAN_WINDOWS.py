@@ -903,12 +903,12 @@ class scan_windows():
             except subprocess.CalledProcessError:
                 print("[LA RISOLUZIONE HA FALLITO PASSO AD CERTIPY]")
 
-    def certipy(self, ip, dominio, nome_utente, password_utente, rinomina2=None):
+    def certipy(self, ip, nome_utente, password_utente, rinomina2=None):
         if rinomina2 is None:
             rinomina2 = getattr(self, "rinomina2", None)
         print("[SCANALIZZO VULN ESC CON CERTIPY ATTENDI...]")
         try:
-            subprocess.run([f"certipy-ad find -u '{nome_utente}' -p '{password_utente}' -d '{dominio}' -dc-ip {ip} -vulnerable >> certipy_scan.txt"], shell=True, check=True)
+            subprocess.run([f"certipy-ad find -u '{nome_utente}' -p '{password_utente}' -dns-tcp -dc-ip {ip} -vulnerable >> certipy_scan.txt"], shell=True, check=True)
             print("[SCAN SALVATO CON SUCCESSO]")
         except subprocess.CalledProcessError:
             print("[SCAN FALLITO RISOLUZIONE PROBLEMI IN CORSO...]")
@@ -918,7 +918,7 @@ class scan_windows():
                 else:
                     print("[NESSUN TGT DISPONIBILE, LA FALLBACK KERBEROS NON FUNZIONERA]")
                 try:
-                    subprocess.run([f"certipy-ad find -no-pass -k -u '{nome_utente}' -d '{dominio}' -dc-ip {ip} -vulnerable >> certipy_scan.txt "], shell=True, check=True)
+                    subprocess.run([f"certipy-ad find -no-pass -k -u '{nome_utente}' -dns-tcp -dc-ip {ip} -vulnerable >> certipy_scan.txt "], shell=True, check=True)
                     print("[LA RISOLUZIONE PROBLEMI HA RISOLTO L'EQUIVOCO]")
                 except subprocess.CalledProcessError:
                     print("[LA RISOLUZIONE PROBLEMI NON E RIUSCITA A RISOLVERE L'EQUIVOCO]")
