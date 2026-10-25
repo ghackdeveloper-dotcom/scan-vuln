@@ -6,7 +6,7 @@ def smb_anon():
     time.sleep(0.5)
     print("[+]-[Procedo con l'accesso anonimo]")
     try:
-        subprocess.run([f"smbclient //{ip} "], check=True, shell=True)
+        subprocess.run([f"smbclient -L //{ip} "], check=True, shell=True)
         print("[+]-[Tentativo di connessione anonima riuscito]")
     except subprocess.CalledProcessError:
         print("[-]-[Tentativo di connessione anonima fallito]")
